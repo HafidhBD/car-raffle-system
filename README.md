@@ -27,10 +27,6 @@
 ### 2. إعداد قاعدة البيانات
 1. انتقل إلى لوحة تحكم Hostinger
 2. اذهب إلى **Databases** > **MySQL Databases**
-3. قاعدة البيانات جاهزة مسبقاً:
-   - **Database:** u983353360_carr
-   - **Username:** u983353360_carr
-   - **Password:** e*7P?ux&qc2K
 
 4. اذهب إلى **phpMyAdmin**
 5. اختر قاعدة البيانات `u983353360_carr`
