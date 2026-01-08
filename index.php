@@ -13,7 +13,7 @@ $csrf_token = Security::generateCSRFToken();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سحب السيارة - حمات</title>
+    <title>سحب السيارة - هامات</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
@@ -293,7 +293,6 @@ $csrf_token = Security::generateCSRFToken();
         <!-- Hero Section -->
         <div class="hero">
             <div class="hero-content">
-                <img src="logos/logo -Family Bonds.png" alt="السحب" class="car-visual-img">
                 <h1>سحب على <span>سيارة</span></h1>
                 <p>سجّل الآن واحصل على فرصة للفوز بسيارة جديدة!</p>
                 <div class="prize-badge">🎉 الجائزة الكبرى</div>
