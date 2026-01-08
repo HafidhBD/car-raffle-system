@@ -25,7 +25,7 @@ $csrf_token = Security::generateCSRFToken();
         }
         
         body {
-            background: linear-gradient(180deg, var(--brand-blue) 0%, #0d1f35 100%);
+            background: #f8fafc;
             min-height: 100vh;
         }
         
@@ -41,8 +41,7 @@ $csrf_token = Security::generateCSRFToken();
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 2rem;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
+            background: var(--brand-blue);
         }
         
         .logo {
@@ -95,11 +94,10 @@ $csrf_token = Security::generateCSRFToken();
         }
         
         .hero h1 {
-            color: white;
+            color: var(--brand-blue);
             font-size: 2.75rem;
             font-weight: 900;
             margin-bottom: 0.75rem;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         
         .hero h1 span {
@@ -107,7 +105,7 @@ $csrf_token = Security::generateCSRFToken();
         }
         
         .hero p {
-            color: rgba(255,255,255,0.85);
+            color: #64748b;
             font-size: 1.25rem;
             max-width: 400px;
             margin: 0 auto;
@@ -247,7 +245,7 @@ $csrf_token = Security::generateCSRFToken();
         .footer {
             text-align: center;
             padding: 1.5rem;
-            color: rgba(255,255,255,0.6);
+            color: #64748b;
             font-size: 0.875rem;
         }
         
@@ -288,8 +286,8 @@ $csrf_token = Security::generateCSRFToken();
     <div class="register-page">
         <!-- Header with Logos -->
         <header class="header-logos">
-            <img src="assets/images/hamat-logo.png" alt="حمات" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار حمات</div>'">
-            <img src="assets/images/campaign-logo.png" alt="الحملة" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار الحملة</div>'">
+            <img src="logos/HAMAT.png" alt="حمات" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار حمات</div>'">
+            <img src="logos/logo -Family Bonds.png" alt="الحملة" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار الحملة</div>'">
         </header>
 
         <!-- Hero Section -->
@@ -369,7 +367,7 @@ $csrf_token = Security::generateCSRFToken();
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-logos">
-                <img src="assets/images/hamat-logo.png" alt="حمات" class="footer-logo" onerror="this.style.display='none'">
+                <img src="logos/HAMAT.png" alt="حمات" class="footer-logo" onerror="this.style.display='none'">
             </div>
             <p>جميع الحقوق محفوظة © <?= date('Y') ?> حمات</p>
         </footer>
