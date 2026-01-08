@@ -38,7 +38,7 @@ $csrf_token = Security::generateCSRFToken();
         /* Header with Logos */
         .header-logos {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 1.5rem 2rem;
             background: var(--brand-blue);
@@ -288,7 +288,6 @@ $csrf_token = Security::generateCSRFToken();
         <!-- Header with Logos -->
         <header class="header-logos">
             <img src="logos/HAMAT.png" alt="حمات" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار حمات</div>'">
-            <img src="logos/logo -Family Bonds.png" alt="الحملة" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار الحملة</div>'">
         </header>
 
         <!-- Hero Section -->

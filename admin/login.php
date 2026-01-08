@@ -77,14 +77,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>تسجيل الدخول - لوحة التحكم</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        :root {
+            --brand-orange: #f97630;
+            --brand-blue: #193a63;
+        }
+        body {
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        .login-header {
+            background: var(--brand-blue);
+            padding: 2rem;
+            text-align: center;
+        }
+        .login-logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .login-header h1 {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .card {
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            background: var(--brand-blue);
+            border-radius: 16px 16px 0 0;
+            padding: 1rem 1.5rem;
+            margin: -2rem -2rem 1.5rem -2rem;
+        }
+        .card-title {
+            color: white;
+            margin: 0;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-orange) 0%, #e55a1b 100%);
+            border: none;
+            box-shadow: 0 6px 20px rgba(249, 118, 48, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249, 118, 48, 0.4);
+        }
+        .form-control:focus {
+            border-color: var(--brand-orange);
+            box-shadow: 0 0 0 3px rgba(249, 118, 48, 0.15);
+        }
+    </style>
 </head>
 <body>
     <div class="register-page">
-        <div class="hero" style="padding: 2rem;">
-            <div class="hero-content">
-                <div style="font-size: 3rem; margin-bottom: 0.5rem;">🔐</div>
-                <h1 style="font-size: 1.75rem;">لوحة تحكم المدير</h1>
-            </div>
+        <div class="login-header">
+            <img src="../logos/logo -Family Bonds.png" alt="السحب" class="login-logo" onerror="this.style.display='none'">
+            <h1>لوحة تحكم المدير</h1>
         </div>
 
         <div class="register-content">
