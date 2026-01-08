@@ -81,10 +81,11 @@ $csrf_token = Security::generateCSRFToken();
             z-index: 1;
         }
         
-        .car-visual {
-            font-size: 6rem;
+        .car-visual-img {
+            max-width: 200px;
+            height: auto;
             margin-bottom: 1.5rem;
-            filter: drop-shadow(0 10px 30px rgba(249, 118, 48, 0.4));
+            filter: drop-shadow(0 10px 30px rgba(249, 118, 48, 0.3));
             animation: float 3s ease-in-out infinite;
         }
         
@@ -276,8 +277,8 @@ $csrf_token = Security::generateCSRFToken();
             .hero p {
                 font-size: 1rem;
             }
-            .car-visual {
-                font-size: 4rem;
+            .car-visual-img {
+                max-width: 150px;
             }
         }
     </style>
@@ -293,7 +294,7 @@ $csrf_token = Security::generateCSRFToken();
         <!-- Hero Section -->
         <div class="hero">
             <div class="hero-content">
-                <div class="car-visual">🚗</div>
+                <img src="logos/logo -Family Bonds.png" alt="السحب" class="car-visual-img">
                 <h1>سحب على <span>سيارة</span></h1>
                 <p>سجّل الآن واحصل على فرصة للفوز بسيارة جديدة!</p>
                 <div class="prize-badge">🎉 الجائزة الكبرى</div>
