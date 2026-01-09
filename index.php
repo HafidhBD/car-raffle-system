@@ -592,11 +592,8 @@ $csrf_token = Security::generateCSRFToken();
                             <input type="text" id="mallName" class="form-control" readonly>
                         </div>
 
-                        <div class="form-group mb-4">
-                            <label class="terms-check">
-                                <input type="checkbox" name="terms" required>
-                                <span><?= $t['terms_agree'] ?> <a href="#" onclick="openTerms(event)"><?= $t['terms_link'] ?></a></span>
-                            </label>
+                        <div class="form-group mb-4" style="text-align: center; font-size: 0.9rem;">
+                            <span><?= $t['terms_agree'] ?> <a href="#" onclick="openTerms(event)" style="color: var(--brand-orange); text-decoration: underline;"><?= $t['terms_link'] ?></a></span>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn">
