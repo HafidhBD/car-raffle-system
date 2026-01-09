@@ -22,8 +22,8 @@ $trans = [
         'alt_hamat' => 'هامات',
         'alt_fb' => 'Family Bonds',
         'ph_hamat' => 'شعار هامات',
-        'hero_title' => 'سحب على <span>سيارة</span>',
-        'hero_desc' => 'سجّل الآن واحصل على فرصة للفوز بسيارة جديدة!',
+        'hero_title' => 'ادخل السحب للفوز <span>بسيارة</span>',
+        'hero_desc' => 'سجّل الآن واحصل على فرصة للفوز بسيارة MG5!',
         'grand_prize' => '🎉 الجائزة الكبرى',
         'checking_loc' => 'جاري التحقق من موقعك...',
         'reg_form' => 'نموذج التسجيل',
@@ -58,7 +58,7 @@ $trans = [
         'alt_fb' => 'Family Bonds',
         'ph_hamat' => 'Hamat Logo',
         'hero_title' => 'Win a <span>Car</span>',
-        'hero_desc' => 'Register now for a chance to win a new car!',
+        'hero_desc' => 'Register now for a chance to win a MG5 Car!',
         'grand_prize' => '🎉 Grand Prize',
         'checking_loc' => 'Checking your location...',
         'reg_form' => 'Registration Form',
