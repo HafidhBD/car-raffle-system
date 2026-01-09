@@ -267,7 +267,7 @@ $csrf_token = Security::generateCSRFToken();
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background-color: #000000 !important;
+            background-color: #f97630 !important;
             position: relative;
             z-index: 10;
         }
