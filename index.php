@@ -47,7 +47,10 @@ $trans = [
         'js_error_verify' => 'حدث خطأ في التحقق من الموقع',
         'js_loc_verified' => 'تم التحقق من موقعك - ',
         'js_generic_error' => 'حدث خطأ. يرجى المحاولة مرة أخرى.',
-        'switch_lang' => 'English'
+        'switch_lang' => 'English',
+        'terms_agree' => 'بتسجيل مشاركتك انت توافق على ',
+        'terms_link' => 'الشروط والأحكام',
+        'terms_title' => 'الشروط والأحكام'
     ],
     'en' => [
         'title' => 'Car Raffle - Hamat',
@@ -79,12 +82,107 @@ $trans = [
         'js_error_verify' => 'Error verifying location',
         'js_loc_verified' => 'Location verified - ',
         'js_generic_error' => 'An error occurred. Please try again.',
-        'switch_lang' => 'العربية'
+        'switch_lang' => 'العربية',
+        'terms_agree' => 'By registering, you agree to the ',
+        'terms_link' => 'Terms & Conditions',
+        'terms_title' => 'Terms & Conditions'
     ]
 ];
 
 $t = $trans[$lang];
 $next_lang = $lang === 'ar' ? 'en' : 'ar';
+$terms_content = '
+<div class="terms-content">
+    <h4 class="text-center mb-4">TERMS & CONDITIONS – CAR RAFFLE DRAW ACTIVATION</h4>
+    
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Data Collection | جمع البيانات</h5>
+        <p class="mb-1 text-muted">By participating, visitors agree to provide their information for raffle entry purposes and future marketing communications.</p>
+        <p dir="rtl">من خلال المشاركة، يوافق الزوار على تقديم معلوماتهم لغرض الدخول في السحب والاتصالات التسويقية المستقبلية.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Eligibility | الأهلية</h5>
+        <p class="mb-1 text-muted">The raffle is open to all mall visitors aged 18 years and above. A valid ID is required to claim the prize.</p>
+        <p dir="rtl">السحب مفتوح لجميع زوار المول الذين تبلغ أعمارهم 18 عامًا فأكثر. يلزم تقديم هوية سارية لاستلام الجائزة.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Participation | المشاركة</h5>
+        <p class="mb-1 text-muted">Each visitor is entitled to one raffle entry per day after completing the registration process. Duplicate entries will be disqualified.</p>
+        <p dir="rtl">يحق لكل زائر إدخال واحد في السحب يوميًا بعد إتمام عملية التسجيل. سيتم استبعاد الإدخالات المكررة.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Duration | المدة</h5>
+        <p class="mb-1 text-muted">The raffle will run during the announced campaign period. The draw date will be communicated through official mall channels.</p>
+        <p dir="rtl">سيستمر السحب طوال فترة الحملة المعلنة. سيتم الإعلان عن تاريخ السحب عبر القنوات الرسمية للمول.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Prize | الجائزة</h5>
+        <p class="mb-1 text-muted">The prize is one car for each winner (model and specifications as announced). The prize is non-transferable and cannot be exchanged for cash or other items.</p>
+        <p dir="rtl">الجائزة عبارة عن سيارة واحدة لكل فائز (الموديل والمواصفات كما هو معلن). الجائزة غير قابلة للتحويل ولا يمكن استبدالها نقدًا أو بمنتجات أخرى.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Prize Specifications | مواصفات الجائزة</h5>
+        <p class="mb-1 text-muted">The car’s specifications, and color are subject to availability and may differ from any images or representations shown in promotional materials.</p>
+        <p dir="rtl">مواصفات السيارة ولونها تخضع للتوافر وقد تختلف عن أي صور أو تمثيلات معروضة في المواد الترويجية.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Winner Announcement & Collection | إعلان واستلام الجائزة</h5>
+        <p class="mb-1 text-muted">The winner will be selected randomly under supervision of relevant authorities and announced publicly. The winner must claim the prize within 14 days of announcement and provide all required documents. Failure to do so will result in forfeiture.</p>
+        <p dir="rtl">سيتم اختيار الفائز عشوائيًا تحت إشراف الجهات المختصة والإعلان عنه علنًا. يجب على الفائز استلام الجائزة خلال 14 يومًا من الإعلان وتقديم جميع المستندات المطلوبة، وإلا تعتبر الجائزة ملغاة.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Winner Eligibility & Prize Transfer | أهلية الفائز وتحويل الجائزة</h5>
+        <p class="mb-1 text-muted">If the winner is over 18 years old but does not hold a valid driving license, they may register the car under the name of a first-degree relative only.</p>
+        <p dir="rtl">يحق للفائز الذي يبلغ من العمر أكثر من 18 سنة أو لا يملك رخصة قيادة، تسجيل السيارة باسم قريب من الدرجة الأولى فقط.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Car Insurance | تأمين السيارة</h5>
+        <p class="mb-1 text-muted">Car insurance is not provided. It is the responsibility of the winner to insure the car.</p>
+        <p dir="rtl">لا يتم توفير تأمين السيارة. تقع مسؤولية تأمين السيارة على الفائز.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Car Registration Fees | رسوم تسجيل السيارة</h5>
+        <p class="mb-1 text-muted">The registration cost for the car will be managed by the winner.</p>
+        <p dir="rtl">ستكون تكلفة رسوم تسجيل السيارة على عاتق الفائز.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Event Changes | تغييرات الفعالية</h5>
+        <p class="mb-1 text-muted">The organizers reserve the right to modify or cancel the event at any time without prior notice.</p>
+        <p dir="rtl">يحتفظ المنظمون بالحق في تعديل أو إلغاء الفعالية في أي وقت دون إشعار مسبق.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Disqualification | الاستبعاد</h5>
+        <p class="mb-1 text-muted">Any attempt to manipulate or interfere with the event mechanism will result in disqualification.</p>
+        <p dir="rtl">أي محاولة للتلاعب أو التدخل في آلية الفعالية ستؤدي إلى الاستبعاد.</p>
+    </div>
+
+    <div class="term-item mb-3">
+        <h5 class="mb-2">Additional Clauses | البنود الإضافية</h5>
+        <p class="mb-1 text-muted">Company shall not be liable for any technical malfunctions, system errors, or failures that may affect participation in the activation, including but not limited to network issues, device compatibility, or unforeseen interruptions. The Company is also not responsible for any misinterpretation of the rules, errors in participation, or disputes arising from the activation.</p>
+        <p dir="rtl" class="mb-2">لا تتحمل الشركة أي مسؤولية عن أي أعطال تقنية أو أخطاء في النظام أو إخفاقات قد تؤثر على المشاركة في الفعالية، بما في ذلك، على سبيل المثال لا الحصر، مشكلات الشبكة، توافق الأجهزة مع النظام، أو الانقطاعات غير المتوقعة. كما أن الشركة غير مسؤولة عن أي سوء فهم لقواعد الفعالية، أخطاء في المشاركة، أو أي نزاعات تنشأ عنها.</p>
+        
+        <p class="mb-1 text-muted">Furthermore, the Company does not guarantee or warrant the functionality, security, or uninterrupted operation of the activation process. The Company reserves the absolute right to modify, suspend, or cancel the activation at any time without prior notice and without incurring any liability.</p>
+        <p dir="rtl" class="mb-2">علاوة على ذلك، لا تضمن الشركة تشغيل الفعالية دون انقطاع أو خلوها من الأخطاء أو المشكلات الأمنية. وتحتفظ الشركة بالحق المطلق في تعديل أو تعليق أو إلغاء الفعالية في أي وقت دون إشعار مسبق ودون أي مسؤولية قانونية.</p>
+        
+        <p class="mb-1 text-muted">By participating in this activation, participants acknowledge and agree that the Company’s decisions shall be final and binding in all matters related to the activation, and no claims, disputes, or challenges shall be entertained.</p>
+        <p dir="rtl" class="mb-2">من خلال المشاركة في هذه الفعالية، يقر المشاركون ويوافقون على أن قرارات الشركة نهائية وملزمة في جميع الأمور المتعلقة بالفعالية، ولن يتم قبول أي مطالبات أو نزاعات أو اعتراضات.</p>
+
+        <p class="mb-1 text-muted">By filling your registration, you automatically agree to the above conditions.</p>
+        <p dir="rtl">من خلال ملء استمارة التسجيل الخاصة بك، فإنك توافق تلقائيًا على الشروط المذكورة أعلاه.</p>
+    </div>
+</div>';
+
 
 $csrf_token = Security::generateCSRFToken();
 ?>
@@ -401,6 +499,39 @@ $csrf_token = Security::generateCSRFToken();
                 <?= $lang === 'ar' ? 'left' : 'right' ?>: 1rem;
             }
         }
+        
+        /* Terms Styles */
+        .terms-check {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--brand-blue);
+            cursor: pointer;
+        }
+        .terms-check input {
+            width: 1.2rem;
+            height: 1.2rem;
+            accent-color: var(--brand-orange);
+        }
+        .terms-check a {
+            color: var(--brand-orange);
+            text-decoration: underline;
+        }
+        .terms-content {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 0.5rem;
+        }
+        .term-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .term-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -461,6 +592,13 @@ $csrf_token = Security::generateCSRFToken();
                             <input type="text" id="mallName" class="form-control" readonly>
                         </div>
 
+                        <div class="form-group mb-4">
+                            <label class="terms-check">
+                                <input type="checkbox" name="terms" required>
+                                <span><?= $t['terms_agree'] ?> <a href="#" onclick="openTerms(event)"><?= $t['terms_link'] ?></a></span>
+                            </label>
+                        </div>
+
                         <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn">
                             <span><?= $t['submit'] ?></span>
                         </button>
@@ -494,6 +632,22 @@ $csrf_token = Security::generateCSRFToken();
         </footer>
     </div>
 
+    <!-- Terms Modal -->
+    <div class="modal-overlay" id="termsModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title"><?= $t['terms_title'] ?></h3>
+                <button class="modal-close" onclick="closeTerms()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <?= $terms_content ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-block" onclick="closeTerms()">I Agree / موافق</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         const locationStatus = document.getElementById('locationStatus');
         const registrationCard = document.getElementById('registrationCard');
@@ -502,6 +656,15 @@ $csrf_token = Security::generateCSRFToken();
         const errorText = document.getElementById('errorText');
         const registrationForm = document.getElementById('registrationForm');
         const submitBtn = document.getElementById('submitBtn');
+
+        function openTerms(e) {
+            e.preventDefault();
+            document.getElementById('termsModal').classList.add('active');
+        }
+
+        function closeTerms() {
+            document.getElementById('termsModal').classList.remove('active');
+        }
 
         // Translations for JS
         const lang = '<?= $lang ?>';
