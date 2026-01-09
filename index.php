@@ -287,7 +287,7 @@ $csrf_token = Security::generateCSRFToken();
     <div class="register-page">
         <!-- Header with Logos -->
         <header class="header-logos">
-            <img src="logos/HAMAT.png" alt="حمات" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار حمات</div>'">
+            <img src="logos/HAMAT.png" alt="هامات" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار هامات</div>'">
         </header>
 
         <!-- Hero Section -->
@@ -365,10 +365,7 @@ $csrf_token = Security::generateCSRFToken();
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="footer-logos">
-                <img src="logos/HAMAT.png" alt="حمات" class="footer-logo" onerror="this.style.display='none'">
-            </div>
-            <p>جميع الحقوق محفوظة © <?= date('Y') ?> حمات</p>
+            <p>جميع الحقوق محفوظة © <?= date('Y') ?> هامات</p>
         </footer>
     </div>
 

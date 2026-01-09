@@ -7,8 +7,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <aside class="sidebar">
     <div class="sidebar-logo">
-        <div class="logo-icon">🚗</div>
-        <h2>سحب السيارة</h2>
+        <img src="../logos/HAMAT.png" alt="هامات" style="height: 40px; filter: brightness(0) invert(1);">
     </div>
 
     <nav>
