@@ -272,20 +272,20 @@ $csrf_token = Security::generateCSRFToken();
         /* Header with Logos */
         .header-logos {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 2rem;
-            background: transparent;
-            gap: 3rem;
+            padding: 1.5rem 2rem;
+            background: #000000;
             position: relative;
             z-index: 10;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
         .logo {
-            height: 70px;
+            height: 60px;
             max-width: 180px;
             object-fit: contain;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+            filter: drop-shadow(0 4px 6px rgba(255,255,255,0.1));
             transition: transform 0.3s ease;
         }
 
@@ -296,15 +296,15 @@ $csrf_token = Security::generateCSRFToken();
         .logo-placeholder {
             height: 60px;
             padding: 0.5rem 1rem;
-            background: rgba(25, 58, 99, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--brand-blue);
+            color: white;
             font-weight: 700;
             font-size: 0.875rem;
-            border: 2px dashed rgba(25, 58, 99, 0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.2);
         }
         
         /* Hero Section */
@@ -346,20 +346,7 @@ $csrf_token = Security::generateCSRFToken();
         
         .hero h1 span {
             color: var(--brand-orange);
-            position: relative;
             display: inline-block;
-        }
-        
-        .hero h1 span::after {
-            content: '';
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            width: 100%;
-            height: 12px;
-            background: rgba(249, 118, 48, 0.15);
-            z-index: -1;
-            border-radius: 4px;
         }
         
         .hero p {
@@ -712,11 +699,11 @@ $csrf_token = Security::generateCSRFToken();
     <div class="register-page">
         <!-- Header with Logos -->
         <header class="header-logos">
+            <img src="logos/HAMAT.png" alt="<?= $t['alt_hamat'] ?>" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'><?= $t['ph_hamat'] ?></div>'">
+            <img src="logos/logo -Family Bonds.png" alt="<?= $t['alt_fb'] ?>" class="logo" onerror="this.style.display='none'">
             <div class="lang-switch">
                 <a href="?lang=<?= $next_lang ?>" class="lang-btn"><?= $t['switch_lang'] ?></a>
             </div>
-            <img src="logos/HAMAT.png" alt="<?= $t['alt_hamat'] ?>" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'><?= $t['ph_hamat'] ?></div>'">
-            <img src="logos/logo -Family Bonds.png" alt="<?= $t['alt_fb'] ?>" class="logo" onerror="this.style.display='none'">
         </header>
 
         <!-- Hero Section -->
