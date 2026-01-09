@@ -213,7 +213,7 @@ $csrf_token = Security::generateCSRFToken();
         }
         
         body {
-            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+            background: #f8fafc;
             min-height: 100vh;
             color: var(--text-main);
             font-family: 'Tajawal', sans-serif;
@@ -232,41 +232,33 @@ $csrf_token = Security::generateCSRFToken();
 
         /* Language Switcher */
         .lang-switch {
-            position: absolute;
-            top: 2rem;
-            <?= $lang === 'ar' ? 'left' : 'right' ?>: 2rem;
             z-index: 100;
         }
         
         .lang-btn {
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--brand-blue);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
         
         .lang-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-            background: white;
+            background: rgba(255, 255, 255, 0.2);
         }
         
         .register-page {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(249, 118, 48, 0.03) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(25, 58, 99, 0.03) 0%, transparent 40%);
+            background: #f8fafc;
         }
         
         /* Header with Logos */
@@ -274,19 +266,16 @@ $csrf_token = Security::generateCSRFToken();
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 2rem;
-            background: #000000;
+            padding: 1rem 2rem;
+            background-color: #000000 !important;
             position: relative;
             z-index: 10;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
         .logo {
             height: 60px;
             max-width: 180px;
             object-fit: contain;
-            filter: drop-shadow(0 4px 6px rgba(255,255,255,0.1));
-            transition: transform 0.3s ease;
         }
 
         .logo:hover {
@@ -309,9 +298,15 @@ $csrf_token = Security::generateCSRFToken();
         
         /* Hero Section */
         .hero {
+            background: transparent !important;
             padding: 2rem 2rem 3rem;
             text-align: center;
             position: relative;
+        }
+        
+        /* Override style.css hero pseudo-element */
+        .hero::before {
+            display: none !important;
         }
         
         .hero-content {
@@ -700,7 +695,6 @@ $csrf_token = Security::generateCSRFToken();
         <!-- Header with Logos -->
         <header class="header-logos">
             <img src="logos/HAMAT.png" alt="<?= $t['alt_hamat'] ?>" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'><?= $t['ph_hamat'] ?></div>'">
-            <img src="logos/logo -Family Bonds.png" alt="<?= $t['alt_fb'] ?>" class="logo" onerror="this.style.display='none'">
             <div class="lang-switch">
                 <a href="?lang=<?= $next_lang ?>" class="lang-btn"><?= $t['switch_lang'] ?></a>
             </div>
