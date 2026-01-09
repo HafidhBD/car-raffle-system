@@ -15,26 +15,26 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $input = json_decode(file_get_contents('php://input'), true);
 
 if (!$input) {
-    jsonResponse(false, 'بيانات غير صالحة');
+    jsonResponse(false, get_trans('invalid_data'));
 }
 
 $latitude = floatval($input['latitude'] ?? 0);
 $longitude = floatval($input['longitude'] ?? 0);
 
 if ($latitude == 0 || $longitude == 0) {
-    jsonResponse(false, 'إحداثيات الموقع غير صالحة');
+    jsonResponse(false, get_trans('invalid_coords'));
 }
 
 try {
     $db = getDB();
     
     // Get all active malls
-    $stmt = $db->prepare("SELECT id, name, latitude, longitude, radius FROM malls WHERE is_active = 1");
+    $stmt = $db->prepare("SELECT id, name, name_en, latitude, longitude, radius FROM malls WHERE is_active = 1");
     $stmt->execute();
     $malls = $stmt->fetchAll();
     
     if (empty($malls)) {
-        jsonResponse(false, 'لا توجد مولات متاحة حالياً');
+        jsonResponse(false, get_trans('no_malls'));
     }
     
     // Check if user is within any mall's radius
@@ -48,18 +48,19 @@ try {
         
         // Distance in meters, radius in meters
         if ($distance <= $mall['radius']) {
-            jsonResponse(true, 'تم التحقق من الموقع', [
+            jsonResponse(true, get_trans('loc_verified'), [
                 'mall_id' => $mall['id'],
-                'mall_name' => $mall['name']
+                'mall_name' => $mall['name'],
+                'mall_name_en' => $mall['name_en']
             ]);
         }
     }
     
-    jsonResponse(false, 'يجب أن تكون داخل أحد المولات المعتمدة للتسجيل');
+    jsonResponse(false, get_trans('outside_mall'));
     
 } catch (Exception $e) {
     error_log("Location check error: " . $e->getMessage());
-    jsonResponse(false, 'حدث خطأ في التحقق من الموقع');
+    jsonResponse(false, get_trans('loc_error'));
 }
 
 /**

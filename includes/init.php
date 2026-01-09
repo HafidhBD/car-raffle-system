@@ -26,6 +26,53 @@ function getDB() {
     return Database::getInstance()->getConnection();
 }
 
+// Get translations
+function get_trans($key) {
+    $lang = $_SERVER['HTTP_X_LANG'] ?? 'ar';
+    $lang = ($lang === 'en') ? 'en' : 'ar';
+    
+    $trans = [
+        'ar' => [
+            'invalid_method' => 'طريقة الطلب غير صحيحة',
+            'invalid_data' => 'بيانات غير صالحة',
+            'invalid_coords' => 'إحداثيات الموقع غير صالحة',
+            'no_malls' => 'لا توجد مولات متاحة حالياً',
+            'loc_verified' => 'تم التحقق من الموقع',
+            'outside_mall' => 'يجب أن تكون داخل أحد المولات المعتمدة للتسجيل',
+            'loc_error' => 'حدث خطأ في التحقق من الموقع',
+            'invalid_session' => 'جلسة غير صالحة. يرجى تحديث الصفحة',
+            'rate_limit' => 'تم تجاوز عدد المحاولات المسموحة. يرجى الانتظار قليلاً',
+            'enter_name' => 'يرجى إدخال الاسم الكامل',
+            'invalid_phone' => 'رقم الجوال غير صحيح',
+            'select_mall' => 'يرجى تحديد المول',
+            'mall_not_found' => 'المول غير موجود أو غير متاح',
+            'duplicate_entry' => 'لقد قمت بالتسجيل مسبقاً خلال الـ 24 ساعة الماضية',
+            'reg_success' => 'تم التسجيل بنجاح',
+            'reg_error' => 'حدث خطأ في التسجيل. يرجى المحاولة مرة أخرى'
+        ],
+        'en' => [
+            'invalid_method' => 'Invalid request method',
+            'invalid_data' => 'Invalid data',
+            'invalid_coords' => 'Invalid coordinates',
+            'no_malls' => 'No malls available currently',
+            'loc_verified' => 'Location verified',
+            'outside_mall' => 'You must be inside one of the authorized malls to register',
+            'loc_error' => 'Error checking location',
+            'invalid_session' => 'Invalid session. Please refresh the page',
+            'rate_limit' => 'Rate limit exceeded. Please wait a moment',
+            'enter_name' => 'Please enter full name',
+            'invalid_phone' => 'Invalid mobile number',
+            'select_mall' => 'Please select a mall',
+            'mall_not_found' => 'Mall not found or inactive',
+            'duplicate_entry' => 'You have already registered within the last 24 hours',
+            'reg_success' => 'Registration successful',
+            'reg_error' => 'Registration error. Please try again'
+        ]
+    ];
+    
+    return $trans[$lang][$key] ?? $key;
+}
+
 // JSON response helper
 function jsonResponse($success, $message, $data = null) {
     header('Content-Type: application/json; charset=utf-8');

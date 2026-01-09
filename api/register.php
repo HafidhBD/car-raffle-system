@@ -8,17 +8,17 @@ require_once __DIR__ . '/../includes/init.php';
 header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    jsonResponse(false, 'طريقة الطلب غير صحيحة');
+    jsonResponse(false, get_trans('invalid_method'));
 }
 
 // Verify CSRF token
 if (!Security::verifyCSRFToken($_POST['csrf_token'] ?? '')) {
-    jsonResponse(false, 'جلسة غير صالحة. يرجى تحديث الصفحة');
+    jsonResponse(false, get_trans('invalid_session'));
 }
 
 // Rate limiting
 if (!Security::checkRateLimit($_SERVER['REMOTE_ADDR'], 5, 300)) {
-    jsonResponse(false, 'تم تجاوز عدد المحاولات المسموحة. يرجى الانتظار قليلاً');
+    jsonResponse(false, get_trans('rate_limit'));
 }
 
 // Validate input
@@ -30,15 +30,15 @@ $longitude = floatval($_POST['longitude'] ?? 0);
 
 // Validation
 if (empty($name) || mb_strlen($name) < 3) {
-    jsonResponse(false, 'يرجى إدخال الاسم الكامل');
+    jsonResponse(false, get_trans('enter_name'));
 }
 
 if (!Security::validatePhone($phone)) {
-    jsonResponse(false, 'رقم الجوال غير صحيح');
+    jsonResponse(false, get_trans('invalid_phone'));
 }
 
 if ($mall_id <= 0) {
-    jsonResponse(false, 'يرجى تحديد المول');
+    jsonResponse(false, get_trans('select_mall'));
 }
 
 try {
@@ -50,7 +50,7 @@ try {
     $mall = $stmt->fetch();
     
     if (!$mall) {
-        jsonResponse(false, 'المول غير موجود أو غير متاح');
+        jsonResponse(false, get_trans('mall_not_found'));
     }
     
     // Check for duplicate entry (same phone in same mall within last 24 hours)
@@ -62,7 +62,7 @@ try {
     $stmt->execute([$phone, $mall_id]);
     
     if ($stmt->fetchColumn() > 0) {
-        jsonResponse(false, 'لقد قمت بالتسجيل مسبقاً خلال الـ 24 ساعة الماضية');
+        jsonResponse(false, get_trans('duplicate_entry'));
     }
     
     // Insert entry
@@ -83,11 +83,11 @@ try {
     
     Security::logEvent('REGISTRATION', "Customer registered: $phone at mall $mall_id");
     
-    jsonResponse(true, 'تم التسجيل بنجاح', [
+    jsonResponse(true, get_trans('reg_success'), [
         'entry_id' => $db->lastInsertId()
     ]);
     
 } catch (Exception $e) {
     error_log("Registration error: " . $e->getMessage());
-    jsonResponse(false, 'حدث خطأ في التسجيل. يرجى المحاولة مرة أخرى');
+    jsonResponse(false, get_trans('reg_error'));
 }
