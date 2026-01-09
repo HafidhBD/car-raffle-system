@@ -42,6 +42,7 @@ $csrf_token = Security::generateCSRFToken();
             align-items: center;
             padding: 1.5rem 2rem;
             background: var(--brand-blue);
+            gap: 2rem;
         }
         
         .logo {
@@ -288,11 +289,13 @@ $csrf_token = Security::generateCSRFToken();
         <!-- Header with Logos -->
         <header class="header-logos">
             <img src="logos/HAMAT.png" alt="هامات" class="logo" onerror="this.outerHTML='<div class=\'logo-placeholder\'>شعار هامات</div>'">
+            <img src="logos/logo -Family Bonds.png" alt="Family Bonds" class="logo" onerror="this.style.display='none'">
         </header>
 
         <!-- Hero Section -->
         <div class="hero">
             <div class="hero-content">
+                <img src="logos/logo -Family Bonds.png" alt="السحب" class="car-visual-img">
                 <h1>سحب على <span>سيارة</span></h1>
                 <p>سجّل الآن واحصل على فرصة للفوز بسيارة جديدة!</p>
                 <div class="prize-badge">🎉 الجائزة الكبرى</div>
